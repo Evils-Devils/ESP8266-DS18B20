@@ -6,4 +6,4 @@ Mostly parts from ESP8266 examples thrown together by a friend (thanks to him an
 Missing features:
   Show full resolution of the sensor.
   Handle multiple sensors.
-  /debug page showing uptime and RSSI
+  /debug page showing uptime and RSSI.
