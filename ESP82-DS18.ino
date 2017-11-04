@@ -179,7 +179,7 @@ void setup() {
   pinMode(5, OUTPUT);               // V
   pinMode(0, OUTPUT);               // V
   digitalWrite(5, HIGH);            // V
-  digitalWrite(0, LOW); // power sensor from gpio
+  digitalWrite(0, LOW);             // power sensor from gpio
 */
   Serial.begin(115200);
   WiFi.begin(ssid, password);
