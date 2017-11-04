@@ -82,7 +82,7 @@ int getTime() {
 /* Temperature stuff */
 /*********************/
 
-OneWire ds(4); // Temperature sensor on pin GIO4
+OneWire ds(2); // Temperature sensor on pin GPIO2
 
 float temp_celcius = 0;
 
@@ -170,15 +170,17 @@ unsigned long packet_sent_time = 0; // Time we last requested time from an NTP s
 unsigned long temp_update_time = 0;
 
 void handleRoot() {
-  server.send(200, "text/plain", '{"temp":"' + ((String) temp_celcius) + '","time":"' + ((String) getTime()) + '"}');
+  server.send(200, "text/plain", "{\"time\":\"" + ((String) getTime()) + "\",\"t1\":\"" + ((String) temp_celcius + "\"}");
 }
 
 void setup() {
-  pinMode(4, INPUT_PULLUP);
+  pinMode(2, INPUT_PULLUP);
+/*
   pinMode(5, OUTPUT);               // V
   pinMode(0, OUTPUT);               // V
   digitalWrite(5, HIGH);            // V
-  digitalWrite(0, LOW);             // power sensor from gpio
+  digitalWrite(0, LOW); // power sensor from gpio
+*/
   Serial.begin(115200);
   WiFi.begin(ssid, password);
   temp_init();
