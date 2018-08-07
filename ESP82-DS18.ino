@@ -170,7 +170,7 @@ unsigned long packet_sent_time = 0; // Time we last requested time from an NTP s
 unsigned long temp_update_time = 0;
 
 void handleRoot() {
-  server.send(200, "text/plain", "{\"time\":\"" + ((String) getTime()) + "\",\"t1\":\"" + ((String) temp_celcius + "\"}");
+  server.send(200, "text/plain", "{\"time\":\"" + ((String) getTime()) + "\",\"t1\":\"" + ((String) temp_celcius + "\"}"));
 }
 
 void setup() {
